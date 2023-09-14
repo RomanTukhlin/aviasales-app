@@ -1,0 +1,39 @@
+$text-color: #4A4A4A;
+
+.filters-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  padding: 10px 20px;
+  font-size: 13px;
+  line-height: 153.846%;
+  color: $text-color;
+  &:hover {
+    background: #F1FCFF;
+  }
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    &:checked + .filters-item__checkbox {
+      background: url("./checked.svg") center / cover no-repeat;
+    }
+
+  }
+  &__checkbox {
+    display: block;
+    margin: 0 10px 0 0;
+    width: 20px;
+    height: 20px;
+    background: url("./checkbox.svg") center / cover no-repeat;
+  }
+  &__label {
+
+  }
+}

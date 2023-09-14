@@ -1,0 +1,29 @@
+$title-color: #4A4A4A;
+
+.filters {
+  width: 232px;
+  padding: 20px 0;
+  background: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+  &__title {
+    color: $title-color;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 100%;
+    font-size: 12px;
+    margin: 0 0 20px 20px;
+  }
+}
+@media (max-width: 740px) {
+  .filters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    &__title {
+      grid-column: 1 / -1;
+    }
+  }
+}

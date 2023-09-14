@@ -1,0 +1,21 @@
+$text-color: #fff;
+$bg-color: #2196F3;
+
+.button {
+  background: $bg-color;
+  color: $text-color;
+  border: solid 1px $bg-color;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 166.667%;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 15px;
+  width: 100%;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+}

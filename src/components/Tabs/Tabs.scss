@@ -1,0 +1,38 @@
+$text-color: #4A4A4A;
+$bg-color: #fff;
+$border-color: #DFE5EC;
+$active-text-color: #fff;
+$bg-active-color: #2196F3;
+
+.tabs {
+  width: 100%;
+  display: flex;
+  &__item {
+    color: $text-color;
+    background: $bg-color;
+    border: solid 1px $border-color;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    line-height: 166.667%;
+    transition: all 0.3s ease 0s;
+    &.active {
+      background: $bg-active-color;
+      color: $active-text-color;
+    }
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+    &:last-child {
+      border-radius: 0 5px 5px 0;
+    }
+    &:hover {
+      border: solid 1px $bg-active-color;
+      background: $bg-active-color;
+      color: $active-text-color;
+    }
+
+  }
+}
