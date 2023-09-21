@@ -1,2 +1,1 @@
-# (Vercel App)[https://aviasalesapp-ivory.vercel.app/]
-
+# [Vercel App](https://aviasalesapp-ivory.vercel.app/)
