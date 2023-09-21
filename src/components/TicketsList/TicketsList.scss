@@ -1,0 +1,12 @@
+.ticket-list {
+  &__spin {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin: 10px 0 20px 0;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.05);
+  }
+}

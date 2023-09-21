@@ -1,14 +1,12 @@
-$text-color: #4A4A4A;
-$bg-color: #fff;
-$border-color: #DFE5EC;
-$active-text-color: #fff;
-$bg-active-color: #2196F3;
+@import "./../../base/variables.scss";
 
 .tabs {
   width: 100%;
   display: flex;
   &__item {
-    color: $text-color;
+    white-space: nowrap;
+    width: 100%;
+    color: $text-color-gray;
     background: $bg-color;
     border: solid 1px $border-color;
     padding: 15px;
@@ -33,6 +31,10 @@ $bg-active-color: #2196F3;
       background: $bg-active-color;
       color: $active-text-color;
     }
-
+  }
+}
+@media (max-width: 475px) {
+  .tabs {
+    flex-direction: column;
   }
 }

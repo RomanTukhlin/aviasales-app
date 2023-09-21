@@ -1,10 +1,11 @@
-$text-color: #fff;
-$bg-color: #2196F3;
+@import "./../../base/variables.scss";
+
+
 
 .button {
-  background: $bg-color;
+  background: $bg-color-blue;
   color: $text-color;
-  border: solid 1px $bg-color;
+  border: solid 1px $bg-color-blue;
   border-radius: 5px;
   font-size: 12px;
   font-weight: 600;

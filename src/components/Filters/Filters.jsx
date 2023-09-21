@@ -1,15 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Filters.scss'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { checkAllAction, checkOneAction, uncheckAllAction } from '../../store/checkboxReducer'
+import {
+  checkAllAction,
+  checkOneAction,
+  uncheckOneAction,
+  setFilterStatusAction,
+  uncheckAllAction,
+} from '../../store/checkboxReducer'
 import { FiltersItem } from '../FiltersItem/FiltersItem'
 
 export const Filters = () => {
   const dispatch = useDispatch()
-  const checkBoxItem = useSelector((state) => state.checkbox.checkbox)
+  const { filterStatus, checkbox } = useSelector((state) => state.checkbox)
+  useEffect(() => {
+    dispatch(setFilterStatusAction())
+  }, [checkbox])
+  useEffect(() => {
+    if (filterStatus.length === 4) {
+      dispatch(checkOneAction('all'))
+    }
+    if (filterStatus.length < 4) {
+      dispatch(uncheckOneAction('all'))
+    }
+  }, [filterStatus.length])
   const allInputToggle = () => {
-    const allInput = checkBoxItem.find((item) => item.id === 'all')
+    const allInput = checkbox.find((item) => item.id === 'all')
     if (allInput.checked === false) {
       dispatch(checkAllAction())
     }
@@ -18,23 +35,19 @@ export const Filters = () => {
     }
   }
   const toggleInput = (id) => {
-    const checkedLength = checkBoxItem.filter((item) => item.checked).length
-    console.log(checkedLength)
     if (id === 'all') {
-      allInputToggle()
+      allInputToggle(id)
     }
-    if (id !== 'all' && checkedLength <= checkBoxItem.length) {
+    if (filterStatus.includes(id)) {
+      dispatch(uncheckOneAction(id))
+    } else if (filterStatus.length <= 4 && id !== 'all') {
       dispatch(checkOneAction(id))
-      if (checkedLength >= 3 && checkedLength < 5) {
-        dispatch(checkOneAction('all'))
-      }
     }
   }
-
   return (
     <div className="filters">
       <h2 className="filters__title">Количество пересадок</h2>
-      {checkBoxItem.map(({ value, id, checked }) => {
+      {checkbox.map(({ value, id, checked }) => {
         return <FiltersItem key={id} id={id} value={value} toggleInput={() => toggleInput(id)} checked={checked} />
       })}
     </div>

@@ -1,0 +1,82 @@
+@import "./../../base/variables.scss";
+
+.ticket-item {
+  padding: 20px;
+  display: grid;
+  gap: 10px 20px;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 5px;
+  background: $bg-color;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1));
+  &:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+  &__price {
+    grid-column: 1 / 3;
+    color: $price-color;
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    width: 110px;
+    height: 36px;
+  }
+  &__content {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px 20px;
+  }
+  &__body {
+    display: flex;
+    gap: 0 40px;
+  }
+  &__info {
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+  &__title {
+    color: $title-color;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: $text-color-gray;
+  }
+}
+
+@media (max-width: 400px) {
+  .ticket-item {
+    &__content {
+      flex-direction: row;
+      gap: 0 25px;
+    }
+    &__body {
+      flex-direction: column;
+    }
+  }
+}
+@media (max-width: 350px) {
+  .ticket-item {
+    grid-template-columns: auto;
+    grid-template-areas: 'image' 'price' '.';
+    justify-items: center;
+    gap: 20px 0;
+    &__price {
+      grid-column: 1 / -1;
+      grid-area: price;
+    }
+    &__image {
+      grid-area: image;
+    }
+    &__content {
+    }
+  }
+}

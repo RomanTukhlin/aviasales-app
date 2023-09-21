@@ -1,4 +1,4 @@
-$text-color: #4A4A4A;
+@import "./../../base/variables.scss";
 
 .filters-item {
   display: flex;
@@ -8,9 +8,9 @@ $text-color: #4A4A4A;
   padding: 10px 20px;
   font-size: 13px;
   line-height: 153.846%;
-  color: $text-color;
+  color: $text-color-gray;
   &:hover {
-    background: #F1FCFF;
+    background: #f1fcff;
   }
   &__input {
     position: absolute;
@@ -22,18 +22,16 @@ $text-color: #4A4A4A;
     clip: rect(0 0 0 0);
     overflow: hidden;
     &:checked + .filters-item__checkbox {
-      background: url("./checked.svg") center / cover no-repeat;
+      background: url('./checked.svg') center / cover no-repeat;
     }
-
   }
   &__checkbox {
     display: block;
     margin: 0 10px 0 0;
     width: 20px;
     height: 20px;
-    background: url("./checkbox.svg") center / cover no-repeat;
+    background: url('./checkbox.svg') center / cover no-repeat;
   }
   &__label {
-
   }
 }

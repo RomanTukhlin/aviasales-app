@@ -1,9 +1,9 @@
 const defaultState = {
-  active: 'free',
+  active: 'optimal',
   sort: [
+    { id: 'optimal', value: 'оптимальный' },
     { id: 'free', value: 'самый дешевый' },
     { id: 'fast', value: 'самый быстрый' },
-    { id: 'optimal', value: 'оптимальный' },
   ],
 }
 export const sortReducer = (state = defaultState, { type, payload }) => {

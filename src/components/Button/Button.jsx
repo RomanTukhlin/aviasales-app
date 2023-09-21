@@ -3,7 +3,7 @@ import './Button.scss'
 
 export const Button = (props) => {
   return (
-    <button type="submit" className="button">
+    <button onClick={() => props.showMoreTicketsClick()} type="submit" className="button">
       {props.children}
     </button>
   )
