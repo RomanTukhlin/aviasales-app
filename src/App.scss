@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import './base/nullstyle.scss';
-@import "./base/variables.scss";
+@import './base/variables.scss';
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -42,7 +42,7 @@ body {
 }
 @media (max-width: 500px) {
   .content {
-    min-width:100%;
+    min-width: 100%;
     width: 100%;
   }
 }
